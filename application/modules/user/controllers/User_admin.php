@@ -16,7 +16,7 @@ class User_admin extends CI_Controller {
     public function __construct() {
         parent::__construct();
         if ($this->session->userdata('logged_admin') == NULL) {
-            header("Location:" . site_url('user/auth/login') . "?location=" . urlencode($_SERVER['REQUEST_URI']));
+            header("Location:" . site_url('welcome') . "?location=" . urlencode($_SERVER['REQUEST_URI']));
         }
         $this->load->model('User_model');
         $this->load->model('activity_log/Activity_log_model');
